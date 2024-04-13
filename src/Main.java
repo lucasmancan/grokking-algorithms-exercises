@@ -160,9 +160,9 @@ public class Main {
 
         int lower = items[0];
 
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] < lower) {
-                lower = items[i];
+        for (int item : items) {
+            if (item < lower) {
+                lower = item;
             }
         }
 

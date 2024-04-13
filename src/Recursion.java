@@ -20,8 +20,26 @@ public class Recursion {
 
         System.out.println("Counting items using recursion: " + count);
 
+        int highestValueInList = highestValueInList(items);
+
+        System.out.println("Finding the greatest value using recursion: " + highestValueInList);
     }
 
+
+    private static int highestValueInList(int[] items){
+
+        // int maior = items[0];
+
+        if(items.length == 2){
+            if(items[0] > items[1])
+                return items[0];
+            else return items[1];
+        }
+
+        int maxValue = highestValueInList(Arrays.copyOfRange(items, 1, items.length));
+
+        return (maxValue > items[0]) ? maxValue: items[0];
+    }
 
     private static int sumWithRecursion(int[] items) {
 
